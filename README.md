@@ -33,7 +33,13 @@ Attach your files, or point Claude at a folder, and ask in plain words:
 
 Say who the audience is and what you want from them if you know. If you don't, Claude works it out from the material and tells you what it assumed. You can also paste an email or notes straight into the conversation, or share a Google Docs link if you have a Google Drive connector.
 
-To try it without your own material, use the ten files in `examples/sample-pile/`. They are a deliberately messy set for a fictional enzyme-screening programme: a review in Markdown, a Word comparison, a PowerPoint chart, an email, a CSV, a budget spreadsheet, pasted call notes, a saved vendor web page, a legacy Word memo, and a whiteboard photo. Two of the sources disagree with each other, and the tool should flag both.
+## Try it on the test package
+
+`examples/test-package/` holds 13 files for a fictional product launch, Helix Atlas: a product brief, legal claims guidance, messaging notes, a rough sales-deck outline, customer interview notes, a draft case study, three spreadsheets, and four email threads. It was put together separately from the tool, as a realistic stand-in for the pile of drafts and email a deck usually starts from. It was not generated while building the tool, and the tool was not tuned to it.
+
+The same package is bundled inside the plugin, so you don't need to download anything. In Cowork or Claude Code, run `/deck-drafter:try`. In chat, ask "Show me what deck-drafter does with its test package." Then read `REVIEW.md` and judge the draft on two things: does the headline flow make a case, and did it flag what a careful editor would flag?
+
+`examples/sample-pile/` is a smaller set of ten files in eight formats, including a whiteboard photo and a legacy Word file, which I used during development.
 
 ## What you get
 
@@ -60,10 +66,16 @@ None of the flags are fixed silently. They go to the review page for you to deci
 
 `docs/how-it-was-built.md` tells the longer story of the engine behind the plugin and records what has been tested.
 
-## Status
+## Where it stands and what comes next
 
-Tested in Claude Code, including fresh sessions that had never seen the material. Packaged for chat and Cowork through the marketplace above. The first runs there are still to be recorded. Known limits:
+This is a proof of concept. It shows that the hard part of a first draft (reading a messy pile, deciding what the deck is for, building the argument, and showing every judgment for review) can be done reliably, and that the result can be held to its sources mechanically.
 
+**The slides are deliberately undesigned.** They come out in a plain test template whose only job is to show the structure the tool builds: which layout each slide needs, what goes on it, and what moves to notes or the appendix. The template is defined by a layout manifest, the contract between the content and the slides. A designed template that implements the same manifest would get the same structure with no change to the tool. Building that designed template is the next step on the visual side. When content has no good layout in the current template, the tool reports the gap rather than forcing it, which is meant to guide that design work.
+
+**The HTML version is a placeholder for a larger idea.** Today it renders the deck as one page with a presenting mode and a reading mode. The goal is not an HTML copy of the deck. It is a richer page built from the same source: the deck's argument with the supporting evidence, detail, and appendix material that does not fit a tight deck, woven in where a reader wants it. That page also needs to stay in step with the deck as people edit it in Google Slides, so keeping it current needs no HTML skills. The page template and that sync are planned as version 2 of the pipeline. The engine already reads human edits back from Google Slides and flags changes that break the argument, but that loop is not yet wired into the plugin or the HTML.
+
+Other known limits:
+
+- The largest pile tested so far is the 13-file test package. Claude reads every source in full, so a very large pile will strain its context.
 - The rule checks are not tuned to each deck's audience, so some advisories may not apply.
-- A very large pile will strain Claude's context, because every source is read in full. The largest pile tested has ten files.
-- Pushing straight to native Google Slides needs the engine's own Google sign-in, which only works in Claude Code on a machine set up for it. Elsewhere, upload the `.pptx` to Google Drive.
+- Pushing straight to native Google Slides needs the engine's own Google sign-in, which only works in Claude Code on a machine set up for it. Elsewhere, upload the `.pptx` to Google Drive and open it with Google Slides.

@@ -57,7 +57,10 @@ The plugin then holds the draft to the sources. It looks for each quote in the s
 | Fresh Claude Code session given the plugin and the demo pile, first attempt | Worked end to end in 52 seconds for $0.63. It noticed that the worked example bundled with the skill was written for the same pile, said so, and reused it. That proved the mechanics but not independent judgment, so I replaced the example with one written for a different pile |
 | Fresh Claude Code session, second attempt, no matching example | Worked end to end in 3.5 minutes for $1.18. It wrote its own draft of 11 slides plus 5 appendix pages. It found both conflicts and flagged them rather than choosing. It kept the vendor's unchecked 6% hit rate out of the headlines and declined to extrapolate activity to 45 C from three points. It added bracketed placeholders for the final cost and for the effect on Q4 screening, and fixed its own flags before handing over. The final lint showed one warning and one advisory. One weakness: the headline "The cost is not final yet" announces an open item, which the judgment guide says a headline should not do |
 
-Not tested yet: Cowork, Claude on the web, installing through the marketplace command rather than loading the plugin directly, fetching a Google Doc through a connector, legacy PowerPoint and Excel conversion (only a legacy Word file was tested), and scanned PDFs.
+| Published to GitHub and installed with `claude plugin marketplace add henrygwazda/deck-drafter` | Installed version 0.2.0 and ran on the engine bundled inside it |
+| Simulated chat sandbox: read-only plugin folder, a bare Python without the packages, empty home folder | Packages installed in about 5 seconds, and all 10 sample files read and built into the same 13-slide deck |
+
+Not tested yet: a real Cowork task, a real claude.ai chat, fetching a Google Doc through a connector, legacy PowerPoint and Excel conversion (only a legacy Word file was tested), and scanned PDFs.
 
 ## Limits
 
@@ -70,3 +73,11 @@ The narrative approval gate from the command-line tool becomes a quick draft fol
 Reading Google Slides edits back into the draft is built in the engine but is not yet wired into the plugin.
 
 Claude must read every source in full, which will strain the context window on a very large pile. The largest pile tested so far has ten files.
+
+## What comes next
+
+This is a proof of concept. The slides are deliberately undesigned. The test template exists to show the structure the tool builds, and it is defined by a layout manifest that any template can implement. A designed template that implements the same manifest would receive the same structure without changes to the tool. Building it is the next step on the visual side, and the layout-gap reports show where it needs layouts the test template lacks.
+
+The HTML pipeline is not finished. Today it renders the deck as one page with presenting and reading modes. The goal is a richer page built from the same source: the deck's argument with the supporting evidence and detail that a tight deck leaves out, woven in where a reader wants it. That page should stay in step with the deck as people edit it in Google Slides, so keeping it current needs no HTML knowledge. The page template and that sync make up version 2 of the pipeline. The engine already reads human edits back from Google Slides and flags changes that break the argument, so the sync has a foundation, but it is not yet connected to the plugin or to the HTML.
+
+The repository includes a 13-file test package for a fictional product launch, put together separately from the tool. The plugin bundles it, so anyone can try the tool with `/deck-drafter:try`, or by asking for a demo in chat.

@@ -1,0 +1,36 @@
+From: Elias Varga <elias.varga@helixbioworks.example>
+To: Maya Chen <maya.chen@helixbioworks.example>,
+ Priya Shah <priya.shah@helixbioworks.example>
+Subject: RE: Atlas deck =?utf-8?b?4oCU?= claims
+Date: Thu, 24 Sep 2026 15:38:00 -0000
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Maya / Priya,
+
+I=E2=80=99m fine with simplifying the science, but we need to stop carrying f=
+orward a few shortcuts from the workshop notes.
+
+- Please don=E2=80=99t say =E2=80=9C48 validated markers.=E2=80=9D The panel =
+has 48 markers. Forty-one met acceptance criteria across all three tested tum=
+or types. The other seven are still in the panel with tumor-type-specific cav=
+eats.
+- =E2=80=9COne slide per sample=E2=80=9D should be something like =E2=80=9Cof=
+ten achievable from a single 5 =C2=B5m FFPE section=E2=80=9D if we really wan=
+t the point in customer material.
+- We should not say =E2=80=9Cpredicts response.=E2=80=9D
+- The 0.93 number is median marker-level correlation across duplicate ROIs. I=
+t is not the same thing as saying =E2=80=9C93% reproducible.=E2=80=9D
+- We do not have inter-site reproducibility data yet.
+- Fourteen days is still aspirational. The operations assumption is 21 days.
+
+I=E2=80=99m comfortable saying the workflow is standardized internally and th=
+at it is designed to reduce assay-development overhead.
+
+For a sophisticated scientific audience, I=E2=80=99d also rather be explicit =
+that technical reproducibility and clinical validation are different things. =
+That doesn=E2=80=99t have to become a legal slide, but we shouldn=E2=80=99t b=
+lur them.
+
+Elias

@@ -14,6 +14,10 @@ Read `reference/judgment.md` before writing the draft and `reference/draft_forma
 
 Run the script as `python3 <this skill's base directory>/scripts/deckdraft.py <command>`. Below, `DD` stands for that.
 
+## Trying the tool without your own material
+
+If the user wants to see what the tool does, has nothing to hand, or asks for a demo or test, offer the bundled test package: the folder `test-package/` in this skill's base directory. It holds 13 files for a fictional product launch (Helix Atlas): a product brief, legal claims guidance, messaging notes, a rough deck outline, customer interview notes, a draft case study, three spreadsheets, and four email threads. A person wrote it independently of the tool as a realistic jumble of drafts, notes, spreadsheets, and email. Pass that folder to intake like any other input, and treat it exactly as you would the user's own files.
+
 ## 1. Set up the project
 
 Pick a short name and make a project folder for it. Where it goes depends on where you are running:
