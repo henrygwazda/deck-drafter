@@ -1,0 +1,17 @@
+{
+  "name": "deck-drafter",
+  "version": "0.2.0",
+  "description": "Turn a pile of documents, notes, email, spreadsheets, and images into a first-draft slide deck in the Helix Bioworks test template, with every editorial judgment logged for review. Proof of concept on a fictional company.",
+  "author": {
+    "name": "Henry Gwazda"
+  },
+  "keywords": [
+    "presentations",
+    "slides",
+    "pptx",
+    "editorial",
+    "first draft"
+  ],
+  "homepage": "https://github.com/henrygwazda/deck-drafter",
+  "repository": "https://github.com/henrygwazda/deck-drafter"
+}

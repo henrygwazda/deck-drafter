@@ -1,0 +1,1031 @@
+{
+  "version": 1,
+  "name": "Persuasion layer v1",
+  "source": "Curated from Henry's marketing-persuasion-guide skill (marketing_knowledge_base.md), a synthesis of 31 marketing, brand, and design books. Every rule here is written in our own words. guide_section names the guide's own section heading so a reviewer can find the point. The guide file itself is not in this repo.",
+  "tag_meaning": {
+    "TESTED": "The guide grounds the point in research or measured results.",
+    "COUNTERINTUITIVE": "The guide marks the point as running against common practice.",
+    "null": "Untagged practitioner guidance."
+  },
+  "stages": {
+    "persuasion_brief": "Building the persuasion brief inside narrative_spec, before the argument.",
+    "narrative": "Choosing and ordering the arguments as steps of the belief bridge.",
+    "frame": "Title, sections, objections placement, and closing ask.",
+    "slide_copy": "Headlines, body text, executive summary, objection rows, and speaker notes.",
+    "qa": "Deterministic and model persuasion review of the composed deck."
+  },
+  "rules": [
+    {
+      "id": "PER-01",
+      "rule": "Decide what the decision-maker should feel about their situation before deciding what to prove. The emotional reason to act comes first and the evidence follows as permission to believe it.",
+      "guide_section": "Foundational Principles 1 (The Psychological Substrate of Decision-Making); Customer & Audience 2 (Emotion Precedes Reason)",
+      "tag": "TESTED",
+      "stages": [
+        "persuasion_brief",
+        "narrative"
+      ],
+      "severity": "warn",
+      "check": "The brief names the internal problem or want, and the first section speaks to it before the detailed data.",
+      "kb_relations": [
+        {
+          "rule": "AUD-24",
+          "relation": "agrees",
+          "note": "AUD-24 already asks for reason and emotion together, with emotion concentrated in the open and close for technical audiences."
+        }
+      ]
+    },
+    {
+      "id": "PER-02",
+      "rule": "Evidence proves the steps of the case. It does not choose them. Each argument states the belief it moves and cites the evidence that makes that belief safe to hold.",
+      "guide_section": "Foundational Principles 8 (Copywriting & Persuasive Writing Craft); Customer & Audience 2",
+      "tag": "TESTED",
+      "stages": [
+        "narrative",
+        "qa"
+      ],
+      "severity": "block",
+      "check": "Every argument has a moves_belief statement and at least one evidence id, or is a qualification resting on an unresolved question.",
+      "kb_relations": [
+        {
+          "rule": "CLM-03",
+          "relation": "agrees",
+          "note": "CLM-03 settles the claim before choosing its evidence. PER-02 applies the same order at the argument level."
+        }
+      ]
+    },
+    {
+      "id": "PER-03",
+      "rule": "Make the audience the hero of the story and the presenter the guide. Problems are things the audience faces, and the outcome is something the audience achieves.",
+      "guide_section": "Foundational Principles 7 (Narrative & Story Structure); Strategy (Brand-as-Guide / Messaging Clarity); Customer & Audience 14",
+      "tag": "TESTED, COUNTERINTUITIVE",
+      "stages": [
+        "persuasion_brief",
+        "slide_copy",
+        "qa"
+      ],
+      "severity": "warn",
+      "check": "Headlines name the audience or their programme as the actor more often than the presenter or the company.",
+      "kb_relations": [
+        {
+          "rule": "AUD-08",
+          "relation": "agrees",
+          "note": "AUD-08 states the same principle. PER-03 adds a deterministic check on headlines."
+        }
+      ]
+    },
+    {
+      "id": "PER-04",
+      "rule": "Show the guide's grounds for trust in two parts: empathy (we understand what this decision costs you) and competence (we have done the work that makes the claim reliable). Competence rests on evidence, not adjectives.",
+      "guide_section": "Foundational Principles 7; Content 12 (Persuasion Mechanics)",
+      "tag": null,
+      "stages": [
+        "persuasion_brief",
+        "slide_copy"
+      ],
+      "severity": "warn",
+      "check": "The brief's trust element names an empathy point tied to a known audience concern and a competence point citing evidence.",
+      "kb_relations": [
+        {
+          "rule": "AUD-14",
+          "relation": "agrees",
+          "note": "AUD-14 asks for credibility early when trust is low. PER-04 applies at any trust level but keeps it brief when trust is high."
+        }
+      ]
+    },
+    {
+      "id": "PER-05",
+      "rule": "State what the decision-maker wants in relation to this decision. Without a want there is no story and no reason to keep listening.",
+      "guide_section": "Foundational Principles 7; Customer & Audience 19 (Storytelling and Narrative Structure)",
+      "tag": null,
+      "stages": [
+        "persuasion_brief",
+        "narrative"
+      ],
+      "severity": "block",
+      "check": "The brief has a non-empty want, and the thesis connects the ask to it.",
+      "kb_relations": [
+        {
+          "rule": "AUD-23",
+          "relation": "agrees",
+          "note": "AUD-23 frames the benefit in what this audience is motivated by."
+        }
+      ]
+    },
+    {
+      "id": "PER-06",
+      "rule": "Separate the external problem (the practical issue) from the internal problem (how it feels to be accountable for it). Decision-makers act on the internal one, so the case must answer it, not only the external one.",
+      "guide_section": "Foundational Principles 7; Customer & Audience 19",
+      "tag": "TESTED, COUNTERINTUITIVE",
+      "stages": [
+        "persuasion_brief"
+      ],
+      "severity": "warn",
+      "check": "The brief's want has both an external and an internal problem, and the internal one is not a restatement of the external one.",
+      "kb_relations": []
+    },
+    {
+      "id": "PER-07",
+      "rule": "Name what the audience stands to lose by not acting, stated from the evidence and at moderate intensity. Too little gives no reason to act now. Too much reads as alarm and is dismissed.",
+      "guide_section": "Content 21 (Fear, Stakes & Negative Messaging); Content 6 (Framing Effects); Customer & Audience 4 (Loss Aversion)",
+      "tag": "TESTED",
+      "stages": [
+        "persuasion_brief",
+        "narrative"
+      ],
+      "severity": "warn",
+      "check": "The brief's stakes element cites evidence or is marked open. No stake is stated as larger than its evidence.",
+      "kb_relations": [
+        {
+          "rule": "AUD-11",
+          "relation": "agrees",
+          "note": "AUD-11 defaults to loss framing for risk."
+        },
+        {
+          "rule": "EVD-35",
+          "relation": "constrains",
+          "note": "EVD-35 requires honest severity. It bounds PER-07: stakes cannot be inflated to motivate."
+        }
+      ]
+    },
+    {
+      "id": "PER-08",
+      "rule": "Follow every stake with its resolution straight away, and give the resolution more room than the problem. The loss frame sharpens the case. It is not the case.",
+      "guide_section": "Content 6 (Framing Effects: reconciling note)",
+      "tag": "TESTED",
+      "stages": [
+        "narrative",
+        "slide_copy"
+      ],
+      "severity": "warn",
+      "check": "Every stake or objection is paired with an answer in the same section or row.",
+      "kb_relations": [
+        {
+          "rule": "NAR-59",
+          "relation": "agrees",
+          "note": "NAR-59 never presents a risk without its response."
+        }
+      ]
+    },
+    {
+      "id": "PER-09",
+      "rule": "For the same fact, prefer wording that names what would be lost or avoided. Keep the overall architecture positive: problem stated briefly, resolution stated fully.",
+      "guide_section": "Content 6; Customer & Audience 4",
+      "tag": "TESTED, COUNTERINTUITIVE",
+      "stages": [
+        "slide_copy"
+      ],
+      "severity": "warn",
+      "check": "Where a headline describes a cost of inaction, it is worded as a loss avoided rather than a gain foregone, without changing the figure.",
+      "kb_relations": [
+        {
+          "rule": "AUD-11",
+          "relation": "agrees",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "PER-10",
+      "rule": "Build a belief bridge. Start from something the audience already accepts and move one belief per step until the ask follows. Never require the audience to jump across a belief they do not yet hold.",
+      "guide_section": "Foundational Principles 7 (Belief as a structural constraint); Strategy (Direct-Response / Direct-Marketing Principles)",
+      "tag": "COUNTERINTUITIVE",
+      "stages": [
+        "persuasion_brief",
+        "narrative"
+      ],
+      "severity": "block",
+      "check": "The brief's belief bridge starts with a belief marked as already held, ends at the ask, and each step maps to an argument in order.",
+      "kb_relations": [
+        {
+          "rule": "NAR-11",
+          "relation": "tightens",
+          "note": "NAR-11 asks for a deductive chain when acceptance must be built. PER-10 makes that chain the deck's spine and requires the first link to be a belief already held."
+        },
+        {
+          "rule": "NAR-05",
+          "relation": "agrees",
+          "note": "NAR-05 opens with a situation the audience already accepts."
+        },
+        {
+          "rule": "AUD-21",
+          "relation": "agrees",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "PER-11",
+      "rule": "Do not tell the audience they are wrong. Present the new information as news about their situation that changes what is sensible to do.",
+      "guide_section": "Content 16 (Positioning & Differentiation); Customer & Audience 13 (Positioning and Category Cognition)",
+      "tag": "COUNTERINTUITIVE",
+      "stages": [
+        "narrative",
+        "slide_copy"
+      ],
+      "severity": "warn",
+      "check": "No headline frames the audience's current view as an error. Corrections are framed as new findings.",
+      "kb_relations": [
+        {
+          "rule": "CLM-27",
+          "relation": "conflicts",
+          "note": "CLM-27 says to label a misconception as false before correcting it. Resolution: when a factual misconception must be corrected, CLM-27 holds and the false claim is labelled, but the correction is worded as a new finding, not as the audience's mistake."
+        }
+      ]
+    },
+    {
+      "id": "PER-12",
+      "rule": "Match the opening to how aware the audience already is. An audience unaware of the problem needs it named first. An audience that knows the problem and the options needs the comparison and the ask.",
+      "guide_section": "Strategy (Direct-Response: match message to prospect awareness stage); Content 2 (Headlines)",
+      "tag": "TESTED",
+      "stages": [
+        "persuasion_brief",
+        "narrative"
+      ],
+      "severity": "warn",
+      "check": "The brief records an awareness stage, and the first section matches it.",
+      "kb_relations": [
+        {
+          "rule": "AUD-02",
+          "relation": "agrees",
+          "note": "AUD-02 records the audience's current position."
+        },
+        {
+          "rule": "AUD-22",
+          "relation": "agrees",
+          "note": "AUD-22 designs the ask for the decision phase the audience is in."
+        }
+      ]
+    },
+    {
+      "id": "PER-13",
+      "rule": "Answer the biggest objection early, before the audience has spent the meeting holding it. Rank objections and place the first-ranked answer before the halfway point of the deck.",
+      "guide_section": "Strategy (Direct-Response: sequencing objections and proof)",
+      "tag": null,
+      "stages": [
+        "persuasion_brief",
+        "frame",
+        "qa"
+      ],
+      "severity": "warn",
+      "check": "The slide answering the first-ranked objection sits before the deck's halfway point.",
+      "kb_relations": [
+        {
+          "rule": "NAR-19",
+          "relation": "tightens",
+          "note": "NAR-19 requires the strongest objections to be addressed. PER-13 adds when: early. The planner's KB default placed the risks slides just before the closing. In persuasion mode the objections page moves forward, and the move is logged as a PERSUASION decision with the KB default."
+        }
+      ]
+    },
+    {
+      "id": "PER-14",
+      "rule": "Hold the proposed solution back only while the audience does not yet accept the problem. Once they accept it, state the ask up front.",
+      "guide_section": "Strategy (Direct-Response: withhold solutions until the prospect is primed)",
+      "tag": "COUNTERINTUITIVE",
+      "stages": [
+        "narrative",
+        "frame"
+      ],
+      "severity": "warn",
+      "check": "If the brief's awareness stage is unaware, the ask is not the first content slide. Otherwise the executive summary states the ask.",
+      "kb_relations": [
+        {
+          "rule": "NAR-02",
+          "relation": "conflicts",
+          "note": "NAR-02 leads with the answer by default. Resolution: NAR-02 already delays the answer when the audience does not accept the problem, which is where PER-14 applies. For evaluating or committed audiences the KB default holds and the executive summary leads with the ask. Logged when the brief's awareness stage changes the order."
+        }
+      ]
+    },
+    {
+      "id": "PER-15",
+      "rule": "Admit a real limit of the case, next to the claim it qualifies. A frank limit makes the larger claims more believable.",
+      "guide_section": "Content 8 (Credibility & Proof: The Admit a Flaw Technique)",
+      "tag": "TESTED, COUNTERINTUITIVE",
+      "stages": [
+        "persuasion_brief",
+        "narrative",
+        "slide_copy"
+      ],
+      "severity": "warn",
+      "check": "The brief lists at least one limit to admit, each citing evidence or an unresolved question, and the deck states it on the slide it qualifies.",
+      "kb_relations": [
+        {
+          "rule": "SPW-15",
+          "relation": "agrees",
+          "note": "SPW-15 puts material caveats on the slide they affect."
+        },
+        {
+          "rule": "EVD-71",
+          "relation": "agrees",
+          "note": "EVD-71 states costs and trade-offs alongside the benefit."
+        }
+      ]
+    },
+    {
+      "id": "PER-16",
+      "rule": "A limit admitted for credibility must be a real one from the evidence or the unresolved questions. A token flaw chosen to look candid is a form of overstatement.",
+      "guide_section": "Content 8; Foundational Principles 21 (Authenticity, Ethics & Social Responsibility)",
+      "tag": null,
+      "stages": [
+        "persuasion_brief",
+        "qa"
+      ],
+      "severity": "block",
+      "check": "Every admitted limit cites evidence ids or an unresolved question id.",
+      "kb_relations": []
+    },
+    {
+      "id": "PER-17",
+      "rule": "Position the ask against the alternative the audience would actually choose without it, which is often doing nothing or continuing as now, not against a competitor the presenter has in mind.",
+      "guide_section": "Strategy (Positioning Fundamentals: competitive alternatives); Content 16",
+      "tag": "COUNTERINTUITIVE",
+      "stages": [
+        "persuasion_brief",
+        "narrative"
+      ],
+      "severity": "warn",
+      "check": "The brief's status-quo element names the realistic alternative and what it costs, with evidence or marked open.",
+      "kb_relations": [
+        {
+          "rule": "NAR-19",
+          "relation": "agrees",
+          "note": "NAR-19 states which alternatives were evaluated."
+        },
+        {
+          "rule": "NAR-58",
+          "relation": "agrees",
+          "note": "NAR-58 shows current and proposed state side by side."
+        }
+      ]
+    },
+    {
+      "id": "PER-18",
+      "rule": "Treat no decision as the main competitor. Show what waiting costs, from the evidence, because a cautious audience defaults to deferring.",
+      "guide_section": "Customer & Audience 3 (Trust and Risk-Avoidance); Customer & Audience 21 (B2B Stakeholder Dynamics)",
+      "tag": "TESTED, COUNTERINTUITIVE",
+      "stages": [
+        "persuasion_brief"
+      ],
+      "severity": "warn",
+      "check": "The brief's status quo includes the option of deferring, and its cost cites evidence or is marked open.",
+      "kb_relations": []
+    },
+    {
+      "id": "PER-19",
+      "rule": "Under uncertainty decision-makers ask whom they can trust and how to avoid the worst outcome. Make the ask the lower-regret option and show that its downside is bounded.",
+      "guide_section": "Customer & Audience 3; Customer & Audience 4 (regret aversion)",
+      "tag": "COUNTERINTUITIVE",
+      "stages": [
+        "persuasion_brief",
+        "narrative"
+      ],
+      "severity": "warn",
+      "check": "The case states the cost and the bounded downside of saying yes, from the evidence.",
+      "kb_relations": [
+        {
+          "rule": "AUD-16",
+          "relation": "agrees",
+          "note": "AUD-16 flags speculation for high-stakes decision-makers."
+        }
+      ]
+    },
+    {
+      "id": "PER-20",
+      "rule": "For a business decision, run the case as: the problem, why the current approach falls short, what a good answer must do, the proposal, its value with objections handled, and the next step.",
+      "guide_section": "Content 16 (Positioning & Differentiation, Dunford)",
+      "tag": null,
+      "stages": [
+        "narrative",
+        "frame"
+      ],
+      "severity": "warn",
+      "check": "The sections follow this arc, or the sections rationale says why not.",
+      "kb_relations": [
+        {
+          "rule": "NAR-57",
+          "relation": "agrees",
+          "note": "NAR-57 orders an approval ask as urgency, fit, financial justification, secondary benefits."
+        }
+      ]
+    },
+    {
+      "id": "PER-21",
+      "rule": "Open with a reframe: something true about the audience's own situation that they have not yet recognised and that makes the ask sensible. The title carries it or the promise it leads to.",
+      "guide_section": "Content 25 (B2B / Technical & Complex Sales Communication); Customer & Audience 21; Foundational Principles 19",
+      "tag": "TESTED, COUNTERINTUITIVE",
+      "stages": [
+        "persuasion_brief",
+        "frame"
+      ],
+      "severity": "warn",
+      "check": "The brief has a reframe citing evidence, and the title or the first section states it.",
+      "kb_relations": [
+        {
+          "rule": "NAR-14",
+          "relation": "agrees",
+          "note": "NAR-14 allows a hook that challenges conventional wisdom."
+        },
+        {
+          "rule": "AUD-28",
+          "relation": "agrees",
+          "note": "AUD-28 ties relevance to a change in the audience's situation."
+        }
+      ]
+    },
+    {
+      "id": "PER-22",
+      "rule": "The reframe must rest on the evidence and lead to the ask. An insight that does not connect to the decision is a lecture, and one the evidence does not support is an overstatement.",
+      "guide_section": "Strategy (Challenger Sale / B2B Persuasion)",
+      "tag": "COUNTERINTUITIVE",
+      "stages": [
+        "persuasion_brief",
+        "qa"
+      ],
+      "severity": "block",
+      "check": "The reframe cites evidence ids, or is marked open and is not used in the title.",
+      "kb_relations": []
+    },
+    {
+      "id": "PER-23",
+      "rule": "Tailor the case to what each stakeholder is accountable for. The same decision is judged on cost by one person and on technical risk by another.",
+      "guide_section": "Customer & Audience 21 (Stakeholder-specific messaging)",
+      "tag": "TESTED",
+      "stages": [
+        "persuasion_brief",
+        "slide_copy"
+      ],
+      "severity": "warn",
+      "check": "The brief lists each stakeholder with what they are accountable for, and each is addressed by at least one argument.",
+      "kb_relations": [
+        {
+          "rule": "AUD-03",
+          "relation": "agrees",
+          "note": ""
+        },
+        {
+          "rule": "AUD-13",
+          "relation": "agrees",
+          "note": "AUD-13 frames success in the metric the stakeholder already uses."
+        },
+        {
+          "rule": "AUD-23",
+          "relation": "agrees",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "PER-24",
+      "rule": "Concrete beats abstract. Use the specific figure, the named case, the dated result. Generalities read as exaggeration.",
+      "guide_section": "Content 4 (Concreteness, Specificity & Sensory Detail)",
+      "tag": "TESTED",
+      "stages": [
+        "slide_copy"
+      ],
+      "severity": "warn",
+      "check": "Claim headlines carry a specific figure or named case from their evidence where one exists.",
+      "kb_relations": [
+        {
+          "rule": "EVD-01",
+          "relation": "agrees",
+          "note": ""
+        },
+        {
+          "rule": "CLM-04",
+          "relation": "agrees",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "PER-25",
+      "rule": "Translate a number to a scale the audience lives with (per run, per week, per person, per batch), and keep the sourced figure on the slide beside the translation. The translation may use only arithmetic on values in the evidence.",
+      "guide_section": "Content 5 (Numbers & Quantitative Communication); Foundational Principles 15",
+      "tag": "TESTED",
+      "stages": [
+        "slide_copy"
+      ],
+      "severity": "warn",
+      "check": "Any translated figure is derivable from evidence values on the same slide, and the original figure is still shown.",
+      "kb_relations": [
+        {
+          "rule": "EVD-12",
+          "relation": "tightens",
+          "note": "EVD-12 asks for contextual meaning. PER-25 says how, and limits the translation to arithmetic on sourced values."
+        },
+        {
+          "rule": "EVD-34",
+          "relation": "agrees",
+          "note": "EVD-34 shows the source values behind a derived figure."
+        }
+      ]
+    },
+    {
+      "id": "PER-26",
+      "rule": "Round for the spoken track, not for the slide. Speaker notes may round a figure for recall. The slide keeps the exact sourced value.",
+      "guide_section": "Content 5 (round numbers aggressively)",
+      "tag": "TESTED, COUNTERINTUITIVE",
+      "stages": [
+        "slide_copy"
+      ],
+      "severity": "warn",
+      "check": "Numbers on slides match evidence values. Rounded numbers appear only in notes.",
+      "kb_relations": [
+        {
+          "rule": "EVD-31",
+          "relation": "conflicts",
+          "note": "The guide favours rounding for recall. EVD-31 requires factual accuracy. Resolution: accuracy wins on the slide, rounding is allowed only in the spoken notes."
+        }
+      ]
+    },
+    {
+      "id": "PER-27",
+      "rule": "When the base is small and known, say it as a count (3 of 8 runs) rather than a percentage (37.5%).",
+      "guide_section": "Content 5 (frequency framing)",
+      "tag": "TESTED, COUNTERINTUITIVE",
+      "stages": [
+        "slide_copy"
+      ],
+      "severity": "warn",
+      "check": "Percentages of small known bases are also given as counts.",
+      "kb_relations": []
+    },
+    {
+      "id": "PER-28",
+      "rule": "Ask directly, with a concrete verb and a specific object the audience can answer yes or no. Never close on learn more, discuss, or consider.",
+      "guide_section": "Content 14 (Calls to Action); Strategy (Brand-as-Guide / Messaging Clarity)",
+      "tag": "TESTED, COUNTERINTUITIVE",
+      "stages": [
+        "persuasion_brief",
+        "frame",
+        "slide_copy",
+        "qa"
+      ],
+      "severity": "block",
+      "check": "The closing ask and the executive summary both state the ask, starting with a concrete verb that is not a vague one.",
+      "kb_relations": [
+        {
+          "rule": "NAR-18",
+          "relation": "tightens",
+          "note": "NAR-18 asks for an unambiguous recommended action. PER-28 adds the yes-or-no test and a deterministic verb check."
+        },
+        {
+          "rule": "CLM-25",
+          "relation": "agrees",
+          "note": "CLM-25 uses a verb that says change, continue, or stop."
+        }
+      ]
+    },
+    {
+      "id": "PER-29",
+      "rule": "The executive summary is the ask plus the three strongest reasons to say yes. It is not a summary of findings.",
+      "guide_section": "Content 14 (ask after the sell is complete, summarise the offer); Content 16",
+      "tag": null,
+      "stages": [
+        "frame",
+        "slide_copy"
+      ],
+      "severity": "warn",
+      "check": "The executive summary headline states the ask and its three points are reasons, each tracing to an argument.",
+      "kb_relations": [
+        {
+          "rule": "NAR-38",
+          "relation": "conflicts",
+          "note": "NAR-38 structures an executive summary as situation, required change, and recommendation. Resolution: for a decision deck the persuasion form is used (the recommendation leads and the reasons follow), which keeps NAR-38's content but reorders it. Logged as a PERSUASION decision with the KB default."
+        }
+      ]
+    },
+    {
+      "id": "PER-30",
+      "rule": "Give the audience a plan: what happens in the first steps after yes. An unclear next step is the usual reason a willing audience says it will think about it.",
+      "guide_section": "Foundational Principles 7 (the guide gives a clear plan); Customer & Audience 19",
+      "tag": null,
+      "stages": [
+        "narrative",
+        "slide_copy"
+      ],
+      "severity": "warn",
+      "check": "The closing or the last section states the next step and who does it.",
+      "kb_relations": [
+        {
+          "rule": "NAR-18",
+          "relation": "agrees",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "PER-31",
+      "rule": "A headline says what the evidence means for the audience, not what the data is. The chart title stays neutral and the headline carries the meaning.",
+      "guide_section": "Content 2 (Headlines: benefit headlines); Foundational Principles 8",
+      "tag": "TESTED",
+      "stages": [
+        "slide_copy"
+      ],
+      "severity": "warn",
+      "check": "Each claim headline names a consequence for the audience's decision, not only a measured value.",
+      "kb_relations": [
+        {
+          "rule": "CLM-01",
+          "relation": "agrees",
+          "note": ""
+        },
+        {
+          "rule": "CLM-12",
+          "relation": "agrees",
+          "note": "CLM-12 keeps the chart's own title neutral."
+        }
+      ]
+    },
+    {
+      "id": "PER-32",
+      "rule": "No hyperbole or stock differentiators (innovative, leading, unique, breakthrough, game-changing, best-in-class, revolutionary, cutting-edge, world-class). Scientific and technical readers stop trusting the deck when they see them.",
+      "guide_section": "Content 20 (Audience Calibration: Persuading Scientists); Content 25 (avoid leading, unique, solution, innovative)",
+      "tag": "TESTED, COUNTERINTUITIVE",
+      "stages": [
+        "slide_copy",
+        "qa"
+      ],
+      "severity": "warn",
+      "check": "No headline or live point contains a listed hype word.",
+      "kb_relations": [
+        {
+          "rule": "CLM-07",
+          "relation": "agrees",
+          "note": "CLM-07 strips vague intensifiers."
+        }
+      ]
+    },
+    {
+      "id": "PER-33",
+      "rule": "Teach. A technical audience is moved by an explanation of why something happens and what it implies, not by promotion.",
+      "guide_section": "Content 20; Customer & Audience 20 (Developer, Scientist, and Technical Audience Trust Dynamics); Foundational Principles 19",
+      "tag": "COUNTERINTUITIVE",
+      "stages": [
+        "narrative",
+        "slide_copy"
+      ],
+      "severity": "warn",
+      "check": "Where the evidence includes a mechanism, the case explains it before relying on the result.",
+      "kb_relations": [
+        {
+          "rule": "EVD-42",
+          "relation": "agrees",
+          "note": ""
+        },
+        {
+          "rule": "AUD-33",
+          "relation": "agrees",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "PER-34",
+      "rule": "Honesty carries the whole case. One overstatement that the audience detects makes every other claim suspect. Never state a claim more strongly than its evidence allows, whatever it does for the argument.",
+      "guide_section": "Foundational Principles 8, 16, 21; Content 8",
+      "tag": "TESTED",
+      "stages": [
+        "persuasion_brief",
+        "narrative",
+        "frame",
+        "slide_copy",
+        "qa"
+      ],
+      "severity": "block",
+      "check": "Every persuasive claim traces to cited evidence at the certainty the evidence supports.",
+      "kb_relations": [
+        {
+          "rule": "CLM-06",
+          "relation": "agrees",
+          "note": "CLM-06 calibrates certainty to evidence. PER-34 makes it the limit on every persuasion rule."
+        }
+      ]
+    },
+    {
+      "id": "PER-35",
+      "rule": "A coherent story feels true whatever its evidence. So the more persuasive the narrative, the more carefully each claim must be traced to its evidence.",
+      "guide_section": "Content 13 (Storytelling & Narrative Structure: narrative coherence creates false confidence); Customer & Audience 16",
+      "tag": "TESTED, COUNTERINTUITIVE",
+      "stages": [
+        "qa"
+      ],
+      "severity": "block",
+      "check": "A claim-by-claim trace finds every headline and executive summary point supported by cited evidence.",
+      "kb_relations": []
+    },
+    {
+      "id": "PER-36",
+      "rule": "Do not manufacture social proof, scarcity, urgency, or authority. Use a peer result, a deadline, or an endorsement only if the evidence contains it.",
+      "guide_section": "Foundational Principles 10 (The Six Universal Persuasion Principles: ethical framing); Customer & Audience 6 (caution on manufactured signals)",
+      "tag": "TESTED",
+      "stages": [
+        "persuasion_brief",
+        "slide_copy",
+        "qa"
+      ],
+      "severity": "block",
+      "check": "Every deadline, peer comparison, or endorsement on a slide traces to an evidence item.",
+      "kb_relations": []
+    },
+    {
+      "id": "PER-37",
+      "rule": "The ending carries more weight than its length suggests. Close on the ask, echo the opening reframe, and do not recap.",
+      "guide_section": "Content 13 (endings carry disproportionate weight); Strategy (peak-end)",
+      "tag": "TESTED, COUNTERINTUITIVE",
+      "stages": [
+        "frame"
+      ],
+      "severity": "warn",
+      "check": "The closing headline restates the reframe or promise as a decision, and the closing ask is the brief's ask.",
+      "kb_relations": [
+        {
+          "rule": "CLM-16",
+          "relation": "agrees",
+          "note": ""
+        },
+        {
+          "rule": "NAR-18",
+          "relation": "agrees",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "PER-38",
+      "rule": "Speaker notes carry the talk track: what to say on this slide, which belief it moves, and how it leads to the next slide.",
+      "guide_section": "Content 3 (Body Copy Momentum: the slippery slide); Foundational Principles 7",
+      "tag": "TESTED",
+      "stages": [
+        "slide_copy"
+      ],
+      "severity": "warn",
+      "check": "Each claim slide's notes are spoken sentences that state its point and its link to the next slide.",
+      "kb_relations": []
+    },
+    {
+      "id": "PER-39",
+      "rule": "Each step should make the next one feel necessary. Use the language of reasoning (so, because, therefore, but) to join the steps.",
+      "guide_section": "Content 3; Content 8 (grammar-level credibility devices)",
+      "tag": "TESTED",
+      "stages": [
+        "slide_copy"
+      ],
+      "severity": "warn",
+      "check": "Read prose and notes state the logical link to the previous or next step.",
+      "kb_relations": [
+        {
+          "rule": "NAR-13",
+          "relation": "agrees",
+          "note": "NAR-13 marks section transitions with connective language."
+        }
+      ]
+    },
+    {
+      "id": "PER-40",
+      "rule": "Prefer proof the audience already trusts: their own data, results from peers like them, and named sources they recognise.",
+      "guide_section": "Customer & Audience 7 (Social Proof, Similarity); Content 25 (ground claims in the customer's own data)",
+      "tag": "TESTED",
+      "stages": [
+        "narrative"
+      ],
+      "severity": "warn",
+      "check": "Where the evidence includes the audience's own data or peer results, the key arguments cite it.",
+      "kb_relations": [
+        {
+          "rule": "EVD-09",
+          "relation": "agrees",
+          "note": ""
+        },
+        {
+          "rule": "EVD-39",
+          "relation": "agrees",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "PER-41",
+      "rule": "One want, one problem, one plan. An argument that does not move a belief on the bridge does not belong in the main deck, however true it is.",
+      "guide_section": "Strategy (Brand-as-Guide / Messaging Clarity: one desire, one problem, one plan)",
+      "tag": "COUNTERINTUITIVE",
+      "stages": [
+        "narrative"
+      ],
+      "severity": "warn",
+      "check": "Every primary and supporting argument maps to a belief bridge step.",
+      "kb_relations": [
+        {
+          "rule": "NAR-01",
+          "relation": "agrees",
+          "note": ""
+        },
+        {
+          "rule": "NAR-45",
+          "relation": "agrees",
+          "note": ""
+        },
+        {
+          "rule": "EVD-05",
+          "relation": "constrains",
+          "note": "Evidence accounting still holds. Material that does not move a belief is excluded with a reason or routed to notes or the appendix, never dropped silently."
+        }
+      ]
+    },
+    {
+      "id": "PER-42",
+      "rule": "Judge the deck by whether the decision-maker would act, read as that person would read it: skeptical, short of time, and accountable for the outcome.",
+      "guide_section": "Foundational Principles 9 (Advertising Effectiveness: the success metric is behaviour change); Customer & Audience 3",
+      "tag": null,
+      "stages": [
+        "qa"
+      ],
+      "severity": "warn",
+      "check": "A persuasion review written as the profile's decision-maker says whether it would act and what stops it.",
+      "kb_relations": []
+    },
+    {
+      "id": "PER-43",
+      "rule": "Length follows the selling job. Keep live slides short and let the reading version carry the full case.",
+      "guide_section": "Content 15 (Long Copy vs. Short Copy)",
+      "tag": "TESTED",
+      "stages": [
+        "slide_copy"
+      ],
+      "severity": "warn",
+      "check": "Live text stays within layout capacity and read prose states the full reasoning.",
+      "kb_relations": [
+        {
+          "rule": "NAR-31",
+          "relation": "agrees",
+          "note": "NAR-31 keeps a lighter live version and a complete standalone version."
+        }
+      ]
+    },
+    {
+      "id": "PER-44",
+      "rule": "Call what the audience must spend a cost or an investment, and say why it is necessary. Do not describe it as a loss.",
+      "guide_section": "Content 6 (label downsides as costs, explain business necessity)",
+      "tag": "TESTED",
+      "stages": [
+        "slide_copy"
+      ],
+      "severity": "warn",
+      "check": "The cost of the ask is stated plainly with its reason.",
+      "kb_relations": [
+        {
+          "rule": "EVD-71",
+          "relation": "agrees",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "PER-45",
+      "rule": "Before any slide, write the story: the problem these people face, why they will care, what we propose, and why it is the best way forward against the realistic alternatives. The deck is that story broken into steps, not a tour of the evidence.",
+      "guide_section": "Foundational Principles 7 (Narrative & Story Structure); Content 13 (Storytelling & Narrative Structure); Content 16 (Positioning & Differentiation, Dunford)",
+      "tag": "TESTED",
+      "stages": [
+        "narrative",
+        "qa"
+      ],
+      "severity": "block",
+      "check": "The narrative has a story with a problem, a reason to care, a solution, why it is best, and a one-sentence big idea.",
+      "kb_relations": [
+        {
+          "rule": "NAR-01",
+          "relation": "tightens",
+          "note": "NAR-01 asks for a one-sentence thesis. PER-45 asks for the problem and solution story the thesis summarises, written before the argument."
+        }
+      ]
+    },
+    {
+      "id": "PER-46",
+      "rule": "Headlines carry the persuasion. Each slide's headline says what that step means for the audience's problem or decision, in one line, so the headlines read in order make the whole case. What the evidence shows goes in the subhead beneath it, not in the headline.",
+      "guide_section": "Content 2 (Headlines); Foundational Principles 8 (the headline doctrine); Content 3 (Body Copy Momentum)",
+      "tag": "TESTED",
+      "stages": [
+        "narrative",
+        "frame",
+        "slide_copy",
+        "qa"
+      ],
+      "severity": "block",
+      "check": "Every argument with a slide has one headline of at most 59 characters in the approved headline flow, with no figure absent from its evidence, and its slide carries an evidence subhead.",
+      "kb_relations": [
+        {
+          "rule": "CLM-01",
+          "relation": "agrees",
+          "note": "Headlines stay complete-sentence assertions. The assertion is about meaning for the audience, with the evidence assertion moved to the subhead."
+        },
+        {
+          "rule": "CLM-18",
+          "relation": "agrees",
+          "note": "CLM-18 gives a two-tier headline's subhead a distinct sentence stating the slide's point in full."
+        },
+        {
+          "rule": "NAR-21",
+          "relation": "tightens",
+          "note": "NAR-21 asks that the titles read in sequence tell the argument. PER-46 writes them in the narrative stage, as a flow approved with the argument."
+        }
+      ]
+    }
+  ],
+  "tensions": [
+    {
+      "id": "PT-01",
+      "name": "Loss framing versus positive framing",
+      "guide_section": "Content 6 (Framing Effects: named disagreement)",
+      "positions": "Kahneman and Cialdini find loss wording more motivating for the same fact. Hopkins and Simon find positive messages outperform problem-led ones overall.",
+      "resolution": "Name the stakes briefly in loss terms, from the evidence, then resolve straight away and give the resolution more space (PER-07, PER-08, PER-09). Stakes are never larger than the evidence (EVD-35)."
+    },
+    {
+      "id": "PT-02",
+      "name": "Short copy versus long copy",
+      "guide_section": "Content 15 (Long Copy vs. Short Copy)",
+      "positions": "Ogilvy, Hopkins, and Sugarman find longer copy sells complex, costly decisions. Miller, Sutherland, and Ries find shorter copy is read and trusted.",
+      "resolution": "The live slides stay within layout capacity (short). The read version and speaker notes carry the full case (long). This matches the existing live and read split (PER-43, NAR-31)."
+    },
+    {
+      "id": "PT-03",
+      "name": "Differentiation versus salience",
+      "guide_section": "Strategy (The Brand vs. No-Brand Debate)",
+      "positions": "Sharp finds salience and availability drive share in mature consumer categories. Ries, Dunford, and Rumelt find differentiation drives position and pricing power.",
+      "resolution": "A decision deck is a single high-consideration choice, the guide's own case for differentiation. The deck positions the ask against the realistic alternative, including doing nothing (PER-17). Salience mechanics do not apply."
+    },
+    {
+      "id": "PT-04",
+      "name": "Confident single-perspective story versus admitted uncertainty",
+      "guide_section": "Customer & Audience 16 (Narrative coherence beats evidence completeness; audiences reward confident messaging)",
+      "positions": "Kahneman finds a single coherent, confident story persuades more than a complete hedged one. Sugarman, Cialdini, and Schwartz find an admitted flaw makes major claims more credible, and honesty is load-bearing.",
+      "resolution": "Honesty wins without exception (PER-34, CLAUDE.md). The story is coherent in its structure, not by omission: contested figures stay contested, and the strongest real limit is admitted next to the claim it qualifies (PER-15)."
+    },
+    {
+      "id": "PT-05",
+      "name": "Withhold the solution versus lead with the answer",
+      "guide_section": "Strategy (Direct-Response principles)",
+      "positions": "Schwartz holds the solution back until the prospect is primed. The KB (NAR-02) leads with the answer for audiences who accept the problem.",
+      "resolution": "Decided by the brief's awareness stage. Unaware audiences get the problem first. Evaluating or committed audiences get the ask up front in the executive summary (PER-14)."
+    },
+    {
+      "id": "PT-06",
+      "name": "Let the reader infer versus assert the conclusion",
+      "guide_section": "Content 19 (Curiosity & Suspense: do not state obvious conclusions)",
+      "positions": "Sugarman finds inferred conclusions land harder. The KB (CLM-01) writes every headline as an explicit assertion.",
+      "resolution": "CLM-01 holds for slide headlines, which must work when only the headlines are read. Inference is left to speaker notes and the spoken track."
+    },
+    {
+      "id": "PT-07",
+      "name": "Non-prescriptive teaching versus a direct ask",
+      "guide_section": "Content 20 (Persuading Scientists); Content 14 (Calls to Action)",
+      "positions": "Ghanadan finds scientists trust unbiased information that lets them reach their own conclusion. Miller finds a direct yes-or-no ask outperforms a passive one.",
+      "resolution": "The evidence slides teach without hype (PER-32, PER-33). The ask is stated directly, but only in the executive summary and the closing (PER-28, PER-29)."
+    },
+    {
+      "id": "PT-08",
+      "name": "Productive discomfort versus no guilt",
+      "guide_section": "Content 21 (Fear, Stakes & Negative Messaging: Challenger)",
+      "positions": "Dixon and Adamson create discomfort about an overlooked problem. The KB (EVD-22) excludes evidence used to provoke guilt.",
+      "resolution": "The discomfort comes only from evidence about the situation, never from blaming the audience, and at moderate intensity (PER-07, PER-11)."
+    },
+    {
+      "id": "PT-09",
+      "name": "Rounded numbers versus exact sourced figures",
+      "guide_section": "Content 5 (Numbers & Quantitative Communication)",
+      "positions": "Heath and Starr find rounding improves recall. The KB (EVD-31) requires accuracy.",
+      "resolution": "Slides keep the exact sourced figure. Rounding and human-scale translation appear beside it or in the notes, and use only arithmetic on evidence values (PER-25, PER-26)."
+    }
+  ],
+  "logged_outcome_changes": [
+    {
+      "rules": [
+        "PER-13",
+        "NAR-19"
+      ],
+      "where": "compose (planner placement)",
+      "kb_default": "The risks slides sit after the last claim section, just before the closing.",
+      "persuasion": "The objections page sits after the section named in deck_frame.objections_after, before the halfway point.",
+      "logged_as": "PERSUASION decision place_objections, with kb_default"
+    },
+    {
+      "rules": [
+        "PER-29",
+        "NAR-38"
+      ],
+      "where": "compose (executive summary)",
+      "kb_default": "The executive summary headline states the thesis, with three supporting points.",
+      "persuasion": "The executive summary headline states the ask, with the three strongest reasons to say yes.",
+      "logged_as": "PERSUASION decision exec_summary_as_ask, with kb_default"
+    },
+    {
+      "rules": [
+        "PER-13",
+        "NAR-19",
+        "NAR-59"
+      ],
+      "where": "compose (risk register)",
+      "kb_default": "Live risk rows are unresolved questions and counterarguments ranked by flag and slide links.",
+      "persuasion": "Live rows are the brief's ranked objections with their answers, followed by any flagged unresolved questions that no objection covers.",
+      "logged_as": "PERSUASION decision objections_register, with kb_default"
+    }
+  ]
+}

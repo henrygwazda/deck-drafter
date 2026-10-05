@@ -1,0 +1,16 @@
+{
+  "_note": "Milestone 3 option A spike, title.A only. Produced by importing template/deck_template.pptx into Google Slides via a Drive API conversion upload, reading the imported presentation's layouts back via presentations.get, and matching each manifest placeholder's box (converted to EMU) against the imported layout's placeholder geometry. Every box matched exactly -- not approximately -- so this map is a direct lookup, not a nearest-match heuristic. Not yet generalized to the other 21 layouts or wired into any renderer; see docs/MILESTONE_3_RESULTS.md section on Option A.",
+  "source_presentation_id": "1bIgeZq65wtiMPZSQbmIkscaBFsvJg3JEkY5HD2f6AN4",
+  "layouts": {
+    "title.A": {
+      "slides_layout_name": "title.A",
+      "placeholders": {
+        "eyebrow":  {"placeholder_type": "BODY",  "placeholder_index": null, "box_emu": [905256, 1874520, 8686800, 365760]},
+        "title":    {"placeholder_type": "TITLE", "placeholder_index": null, "box_emu": [685800, 2331720, 8961120, 1554480]},
+        "subtitle": {"placeholder_type": "BODY",  "placeholder_index": 1,    "box_emu": [685800, 3931920, 8961120, 868680]},
+        "meta":     {"placeholder_type": "BODY",  "placeholder_index": 2,    "box_emu": [685800, 5806440, 6400800, 365760]},
+        "logo":     {"placeholder_type": "BODY",  "placeholder_index": 3,    "box_emu": [9966960, 5715000, 1536192, 548640]}
+      }
+    }
+  }
+}

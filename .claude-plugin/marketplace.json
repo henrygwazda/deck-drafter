@@ -1,0 +1,12 @@
+{
+  "name": "deck-drafter",
+  "owner": {"name": "Henry Gwazda"},
+  "metadata": {"description": "Deck drafter: first-draft slide decks from a pile of mixed material, with logged editorial judgment."},
+  "plugins": [
+    {
+      "name": "deck-drafter",
+      "source": "./plugins/deck-drafter",
+      "description": "Turn documents, notes, email, spreadsheets, and images into a first-draft deck, with every editorial judgment logged for review."
+    }
+  ]
+}

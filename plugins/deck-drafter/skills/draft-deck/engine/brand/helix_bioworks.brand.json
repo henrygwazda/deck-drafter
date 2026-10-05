@@ -1,0 +1,1107 @@
+{
+  "brand": "Helix Bioworks",
+  "fictional": true,
+  "version": "v3-brand / profile 1",
+  "source_doc": "kb/brand_knowledge_base.md",
+  "precedence": [
+    "1. Brand constraints marked non_negotiable: absolute, always blocking.",
+    "2. Brand overrides: replace the targeted KB rule within the entry's scope. The KB text is kept as the default in every decision log entry.",
+    "3. KB rules activated for the deck profile.",
+    "4. Brand constraints and advisories: add requirements. 'tighten' keeps the KB rule and adds the brand condition. 'reinforce' raises the KB rule's severity to blocking.",
+    "5. Brand entries marked 'kb_retained': the brand and KB disagree and the KB wins. Logged so the brand owner can promote it to an override."
+  ],
+  "vocab": {
+    "hype": [
+      "revolutioniz",
+      "transforms",
+      "transformative",
+      "supercharg",
+      "studies show",
+      "proven to",
+      "lightning",
+      "blazing",
+      "seamless",
+      "frictionless",
+      "unlock the power",
+      "unlock actionable",
+      "innovators",
+      "disruptor",
+      "game-chang",
+      "game chang",
+      "cutting-edge",
+      "cutting edge",
+      "magic",
+      "massive traction",
+      "scale rapidly",
+      "all-in-one",
+      "powered by ai"
+    ],
+    "category": [
+      "an ai tool",
+      "ai writing platform",
+      "reporting dashboard",
+      "an ai-powered"
+    ],
+    "scope": [
+      "tells you what your data means",
+      "interprets your",
+      "interprets results",
+      "makes the call",
+      "decides what"
+    ],
+    "urgency": [
+      "don't miss",
+      "limited time",
+      "act now",
+      "before it's too late",
+      "only a few",
+      "window is closing"
+    ],
+    "intensifiers": [
+      "incredible",
+      "amazing",
+      "unprecedented",
+      "huge",
+      "massive",
+      "staggering",
+      "remarkable",
+      "extraordinary",
+      "dramatically",
+      "explosive"
+    ]
+  },
+  "verbatim": {
+    "positioning": "For early-stage biotech and pharma R&D teams who must report progress to boards, investors, and executives, Helix Bioworks is a data layer that turns a lab's own research and trial data into a board-ready update in minutes. Unlike manual reporting or general-purpose AI writing tools, Helix Brief works directly from the lab's own data and flags what a non-scientist reader actually needs to know, rather than producing a generic summary or a plausible-sounding paraphrase."
+  },
+  "tokens": {
+    "color": {
+      "ink_navy": "#16233F",
+      "ochre": "#D98E04",
+      "slate": "#4A5568",
+      "mist": "#A0AEC0",
+      "signal_teal": "#2F6B5E",
+      "paper": "#FDFCFA",
+      "hairline": "#E2E5EA"
+    },
+    "type": {
+      "headline": "Tiempos Headline",
+      "body": "Inter",
+      "data": "IBM Plex Mono"
+    },
+    "slide_type_ramp_pt": {
+      "headline": 36,
+      "subhead": 22,
+      "body": 20,
+      "label": 16,
+      "caption": 12
+    }
+  },
+  "entries": [
+    {
+      "id": "BRD-01",
+      "kind": "constraint",
+      "non_negotiable": true,
+      "category": "claims",
+      "source": "§1 Non-negotiable 1, §9.3",
+      "rule": "Never state a clinical, scientific, or performance outcome the underlying data does not support, however well the claim would land.",
+      "check": "Every outcome claim traces to a named evidence item whose stated result supports it at the stated certainty.",
+      "stages": [
+        "message_model",
+        "editorial",
+        "qa"
+      ],
+      "targets": [
+        {
+          "kb": "CLM-06",
+          "effect": "reinforce"
+        },
+        {
+          "kb": "EVD-45",
+          "effect": "reinforce"
+        }
+      ],
+      "scope": {
+        "channels": [
+          "all"
+        ]
+      }
+    },
+    {
+      "id": "BRD-02",
+      "kind": "constraint",
+      "non_negotiable": true,
+      "category": "voice",
+      "source": "§1 Non-negotiable 2, §9.5, §9.6, §13",
+      "rule": "Never use hype language anywhere in the deck, notes, or appendix.",
+      "check": "No term from the banned vocabulary list appears in any text field.",
+      "stages": [
+        "slide_spec",
+        "notes",
+        "qa"
+      ],
+      "targets": [
+        {
+          "kb": "CLM-07",
+          "effect": "reinforce"
+        }
+      ],
+      "lint": {
+        "check": "banned_phrases",
+        "params": {
+          "list": "hype"
+        }
+      },
+      "scope": {
+        "channels": [
+          "all"
+        ]
+      }
+    },
+    {
+      "id": "BRD-03",
+      "kind": "constraint",
+      "non_negotiable": true,
+      "category": "claims",
+      "source": "§1 Non-negotiable 3, §8.3 Comfortable with incompleteness",
+      "rule": "Never imply more certainty than the evidence earns. When the honest answer is 'we don't know yet', state the gap plainly rather than trimming the uncertain material out.",
+      "check": "Preliminary findings are labeled preliminary. Known gaps appear as stated gaps, on the slide where the related claim appears.",
+      "stages": [
+        "editorial",
+        "slide_spec",
+        "qa"
+      ],
+      "targets": [
+        {
+          "kb": "CLM-06",
+          "effect": "reinforce"
+        },
+        {
+          "kb": "SPW-15",
+          "effect": "reinforce"
+        },
+        {
+          "kb": "AUD-16",
+          "effect": "tighten",
+          "note": "AUD-16 allows minimizing speculation for funders. The brand requires flagging it instead, never silently removing it."
+        }
+      ],
+      "scope": {
+        "channels": [
+          "all"
+        ]
+      }
+    },
+    {
+      "id": "BRD-04",
+      "kind": "constraint",
+      "non_negotiable": true,
+      "category": "process",
+      "source": "§1 Non-negotiable 4",
+      "rule": "Human judgment stays in the loop for anything investor-facing. No deck is marked final while any tool decision in its log is unreviewed.",
+      "check": "If the spec status is 'final', every decision log entry has a review verdict.",
+      "stages": [
+        "qa"
+      ],
+      "lint": {
+        "check": "unreviewed_decisions",
+        "params": {}
+      },
+      "scope": {
+        "channels": [
+          "all"
+        ]
+      },
+      "targets": []
+    },
+    {
+      "id": "BRD-05",
+      "kind": "constraint",
+      "non_negotiable": true,
+      "category": "claims",
+      "source": "§1 Non-negotiable 5, §2.2, §6.4 Adoption row",
+      "rule": "Never claim validation, adoption, or traction without a specific number and a named basis (for example, the design partner cohort).",
+      "check": "Evidence tagged adoption or traction contains a numeral and a source.",
+      "stages": [
+        "editorial",
+        "qa"
+      ],
+      "targets": [
+        {
+          "kb": "EVD-01",
+          "effect": "reinforce"
+        }
+      ],
+      "lint": {
+        "check": "claim_requirements",
+        "params": {
+          "claim_types": [
+            "adoption",
+            "traction"
+          ],
+          "require": [
+            "number",
+            "source"
+          ]
+        }
+      },
+      "scope": {
+        "channels": [
+          "all"
+        ]
+      }
+    },
+    {
+      "id": "BRD-06",
+      "kind": "override",
+      "category": "structure",
+      "scope": {
+        "channels": [
+          "investor",
+          "collateral"
+        ]
+      },
+      "source": "§2.3 Respect for the reader's time, §8.2 Reader-first sequencing",
+      "rule": "State the point before the context at every level. Do not withhold a resolution for dramatic effect.",
+      "check": "Each section opens with its conclusion. No section is built as a reveal.",
+      "stages": [
+        "outline",
+        "slide_spec"
+      ],
+      "targets": [
+        {
+          "kb": "NAR-07",
+          "effect": "override",
+          "replacement": "Present the current state before the proposed state for contrast, but state the resolution immediately. The delayed-resolution variant for inspiration is not used."
+        },
+        {
+          "kb": "AUD-15",
+          "effect": "tighten",
+          "note": "Skeptical audiences may get supporting evidence before a section's recommendation, but the deck thesis still appears in the executive summary."
+        },
+        {
+          "kb": "NAR-03",
+          "effect": "tighten",
+          "note": "Surface the contrary assumption in one sentence at most, then the evidence, then the assertion."
+        }
+      ]
+    },
+    {
+      "id": "BRD-07",
+      "kind": "override",
+      "category": "structure",
+      "scope": {
+        "channels": [
+          "investor",
+          "collateral"
+        ]
+      },
+      "source": "§2.1 Scientific integrity over polish, §6.3 Old way, new way",
+      "rule": "Present data in the order it occurred, and frame stakes by the real cost of the current process. No rhetorical sequencing, invented urgency, or villain.",
+      "check": "Figures appear in chronological or logical order, not reordered for contrast. Stakes cite the actual cost of the manual process.",
+      "stages": [
+        "outline",
+        "slide_spec",
+        "editorial"
+      ],
+      "targets": [
+        {
+          "kb": "NAR-36",
+          "effect": "override",
+          "replacement": "Show trend data in the order it occurred. Do not reorder figures to sharpen a sense of improvement."
+        },
+        {
+          "kb": "AUD-11",
+          "effect": "override",
+          "replacement": "Frame stakes as the concrete, current cost of the old process (days of research-associate time, drift between data and board update). Do not frame by fear of loss or invented urgency."
+        }
+      ]
+    },
+    {
+      "id": "BRD-08",
+      "kind": "override",
+      "category": "evidence",
+      "scope": {
+        "channels": [
+          "all"
+        ]
+      },
+      "source": "§2.2 Earned trust over borrowed authority",
+      "rule": "Do not borrow authority. Category-level momentum, competitor funding, or general industry statistics are never evidence about Helix Bioworks. Cite Helix's own cohort by name and number.",
+      "check": "No evidence item uses an external authority or market statistic as a proxy for Helix validation.",
+      "stages": [
+        "editorial",
+        "qa"
+      ],
+      "targets": [
+        {
+          "kb": "EVD-09",
+          "effect": "override",
+          "replacement": "Back claims about Helix with Helix's own named, numbered evidence. External authorities may support claims about the market or the problem, never as proxy validation of Helix."
+        }
+      ]
+    },
+    {
+      "id": "BRD-09",
+      "kind": "override",
+      "category": "tone",
+      "scope": {
+        "channels": [
+          "investor",
+          "collateral"
+        ]
+      },
+      "source": "§9.4 Investor updates ('zero persuasive technique'), §8.3 Restraint as signal",
+      "rule": "Prefer the precise, sourced figure. Narrative and human-interest material may only illustrate a sourced figure, never stand in for one or win a tie on resonance.",
+      "check": "Where an anecdote or story appears, it sits beside the figure it illustrates and is never the primary evidence.",
+      "stages": [
+        "slide_spec",
+        "editorial"
+      ],
+      "targets": [
+        {
+          "kb": "EVD-60",
+          "effect": "override",
+          "replacement": "When evidence is of equal strength, prefer the more precise and better-sourced item. Surface a surprising sourced finding as the headline."
+        },
+        {
+          "kb": "AUD-24",
+          "effect": "override",
+          "replacement": "Engage through clarity and evidence. Emotional appeal is limited to the concrete cost of the old process as described in the brand's old-way/new-way framing."
+        },
+        {
+          "kb": "NAR-41",
+          "effect": "tighten",
+          "note": "The memorable moment must be a sourced figure or real product output, not a story or evocative image."
+        }
+      ]
+    },
+    {
+      "id": "BRD-10",
+      "kind": "override",
+      "category": "humor",
+      "scope": {
+        "channels": [
+          "investor",
+          "collateral",
+          "pr",
+          "website",
+          "advertising"
+        ]
+      },
+      "source": "§8 Voice mission ('a careful scientist talking to a colleague they respect'), §9.4 tone modifiers",
+      "rule": "No humor in investor, collateral, PR, website, or advertising material.",
+      "check": "No jokes, puns, or humorous asides on slides or in notes.",
+      "stages": [
+        "slide_spec",
+        "notes",
+        "qa"
+      ],
+      "targets": [
+        {
+          "kb": "AUD-34",
+          "effect": "override",
+          "replacement": "Do not use humor. Metaphor is allowed only where it clarifies a mechanism and is drawn from the audience's own working context."
+        },
+        {
+          "kb": "NAR-14",
+          "effect": "tighten",
+          "note": "The opening hook is a sourced fact or the old-way/new-way contrast. Stories and challenges to conventional wisdom are not used as hooks."
+        }
+      ]
+    },
+    {
+      "id": "BRD-11",
+      "kind": "advisory",
+      "category": "tone",
+      "scope": {
+        "channels": [
+          "investor",
+          "collateral"
+        ]
+      },
+      "source": "§9.4 Investor updates register, §9.1 Principles",
+      "rule": "Speaker notes stay in the brand voice: plain, specific, active voice, conversational but never casual. No rhetorical questions, exclamation points, or intensifiers.",
+      "check": "Notes read like a careful scientist briefing a colleague.",
+      "stages": [
+        "notes",
+        "qa"
+      ],
+      "targets": [
+        {
+          "kb": "SPW-27",
+          "effect": "tighten",
+          "note": "Conversational is fine. Casual, salesy, or enthusiastic is not."
+        },
+        {
+          "kb": "SPW-26",
+          "effect": "tighten",
+          "note": "Engagement prompts in notes are optional for investor decks and must not be rhetorical."
+        }
+      ]
+    },
+    {
+      "id": "BRD-12",
+      "kind": "advisory",
+      "category": "structure",
+      "scope": {
+        "channels": [
+          "investor",
+          "collateral"
+        ]
+      },
+      "source": "§6.3 Old way, new way ('The contrast is the argument')",
+      "rule": "Use the old-way/new-way contrast as the deck's central argument device. Section dividers may carry a short question as an eyebrow, but every content headline is a declarative assertion.",
+      "check": "The deck contains an explicit before/after contrast slide. No content headline is phrased as a question.",
+      "stages": [
+        "outline",
+        "slide_spec"
+      ],
+      "targets": [
+        {
+          "kb": "NAR-58",
+          "effect": "reinforce"
+        },
+        {
+          "kb": "CLM-10",
+          "effect": "reinforce"
+        }
+      ]
+    },
+    {
+      "id": "BRD-13",
+      "kind": "constraint",
+      "category": "mechanics",
+      "source": "§9.2 Mechanics",
+      "rule": "No exclamation points, em dashes, en dashes used as dashes, or semicolons in any text.",
+      "check": "Punctuation scan finds none.",
+      "stages": [
+        "qa"
+      ],
+      "lint": {
+        "check": "punctuation",
+        "params": {
+          "banned": [
+            "!",
+            "—",
+            " – ",
+            ";"
+          ]
+        }
+      },
+      "scope": {
+        "channels": [
+          "all"
+        ]
+      },
+      "targets": []
+    },
+    {
+      "id": "BRD-14",
+      "kind": "constraint",
+      "category": "naming",
+      "source": "§4 Brand architecture, §9.2",
+      "rule": "'Helix Bioworks' on first reference, 'Helix' acceptable after. Never 'HB'. 'Helix Brief' always in full. 'The Helix platform' never abbreviated.",
+      "check": "First company mention in reading order is 'Helix Bioworks'. No 'HB'.",
+      "stages": [
+        "qa"
+      ],
+      "lint": {
+        "check": "naming",
+        "params": {}
+      },
+      "scope": {
+        "channels": [
+          "all"
+        ]
+      },
+      "targets": []
+    },
+    {
+      "id": "BRD-15",
+      "kind": "constraint",
+      "category": "naming",
+      "source": "§4 Category (avoid calling ourselves)",
+      "rule": "Never describe Helix as 'an AI tool', 'an AI writing platform', or 'a reporting dashboard'. The category is 'the data layer between the bench and the boardroom'.",
+      "check": "No self-description uses the avoided category terms.",
+      "stages": [
+        "slide_spec",
+        "qa"
+      ],
+      "lint": {
+        "check": "banned_phrases",
+        "params": {
+          "list": "category"
+        }
+      },
+      "scope": {
+        "channels": [
+          "all"
+        ]
+      },
+      "targets": []
+    },
+    {
+      "id": "BRD-16",
+      "kind": "constraint",
+      "category": "claims",
+      "scope": {
+        "channels": [
+          "investor",
+          "collateral",
+          "pr"
+        ]
+      },
+      "source": "§6.1 North Star positioning ('does not get paraphrased in formal usage ... pitch decks')",
+      "rule": "The positioning statement appears verbatim in pitch decks, on the positioning slide.",
+      "check": "The positioning slide body matches the North Star statement exactly.",
+      "stages": [
+        "slide_spec",
+        "qa"
+      ],
+      "targets": [
+        {
+          "kb": "DSN-53",
+          "effect": "relax",
+          "note": "The verbatim statement runs past the 30-word live body target. The positioning slide is exempt from the word cap in both variants."
+        }
+      ],
+      "lint": {
+        "check": "positioning_verbatim",
+        "params": {
+          "layout": "positioning"
+        },
+        "relax": {
+          "live_word_cap": {
+            "exempt_layouts": [
+              "positioning"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "BRD-17",
+      "kind": "constraint",
+      "category": "evidence",
+      "source": "§6.4 Proof point and evidence library",
+      "rule": "Every performance claim names its basis: time savings cite the cohort, cost claims state the comparison basis, risk claims name the specific failure mode, comparisons describe the manual process accurately.",
+      "check": "Evidence tagged time_savings, cost, risk, or comparative carries the field its category requires.",
+      "stages": [
+        "editorial",
+        "qa"
+      ],
+      "targets": [
+        {
+          "kb": "EVD-01",
+          "effect": "tighten"
+        },
+        {
+          "kb": "EVD-03",
+          "effect": "tighten"
+        }
+      ],
+      "lint": {
+        "check": "claim_requirements",
+        "params": {
+          "claim_types": [
+            "time_savings",
+            "cost",
+            "risk",
+            "comparative"
+          ],
+          "require_by_type": {
+            "time_savings": [
+              "number",
+              "source"
+            ],
+            "cost": [
+              "comparison_basis"
+            ],
+            "risk": [
+              "failure_mode"
+            ],
+            "comparative": [
+              "source"
+            ]
+          }
+        }
+      },
+      "scope": {
+        "channels": [
+          "all"
+        ]
+      }
+    },
+    {
+      "id": "BRD-18",
+      "kind": "constraint",
+      "category": "claims",
+      "source": "§9.3 Regulatory and claims staging",
+      "rule": "Claims about a customer's scientific results must carry their stage and stay within what that stage permits.",
+      "check": "Customer-result evidence has a stage. Active-trial evidence makes no outcome claim. Unpublished results are customer-approved.",
+      "stages": [
+        "editorial",
+        "qa"
+      ],
+      "lint": {
+        "check": "customer_results",
+        "params": {}
+      },
+      "scope": {
+        "channels": [
+          "all"
+        ]
+      },
+      "targets": []
+    },
+    {
+      "id": "BRD-19",
+      "kind": "constraint",
+      "category": "claims",
+      "source": "§11 Co-branding with design partners",
+      "rule": "A partner-named result requires the partner's explicit approval. Unapproved figures are anonymized. A partner logo is never larger than or dominant over the Helix Bioworks mark.",
+      "check": "Partner-named evidence has approval recorded.",
+      "stages": [
+        "editorial",
+        "qa"
+      ],
+      "lint": {
+        "check": "partner_approval",
+        "params": {}
+      },
+      "scope": {
+        "channels": [
+          "all"
+        ]
+      },
+      "targets": []
+    },
+    {
+      "id": "BRD-20",
+      "kind": "constraint",
+      "category": "claims",
+      "source": "§6.4 Accuracy/trust row, §6.5",
+      "rule": "Helix Brief structures data. It never interprets results. No copy may say or imply that it tells a reader what data means.",
+      "check": "No claim attributes interpretation or judgment to the product.",
+      "stages": [
+        "slide_spec",
+        "qa"
+      ],
+      "lint": {
+        "check": "banned_phrases",
+        "params": {
+          "list": "scope"
+        }
+      },
+      "scope": {
+        "channels": [
+          "all"
+        ]
+      },
+      "targets": []
+    },
+    {
+      "id": "BRD-21",
+      "kind": "advisory",
+      "category": "evidence",
+      "scope": {
+        "channels": [
+          "investor",
+          "collateral"
+        ]
+      },
+      "source": "§6.5 Objection library (Investor, cross-persona)",
+      "rule": "Seed the objection pass with the brand's investor objections: 'isn't this just another AI tool', 'what stops a portfolio company building this', and data-handling questions. Data-handling objections need a specific current answer or are escalated, never answered with reassurance.",
+      "check": "The alternatives/objections content addresses each listed investor objection or records why not.",
+      "stages": [
+        "message_model",
+        "editorial"
+      ],
+      "targets": [
+        {
+          "kb": "NAR-19",
+          "effect": "reinforce"
+        },
+        {
+          "kb": "AUD-09",
+          "effect": "reinforce"
+        }
+      ]
+    },
+    {
+      "id": "BRD-22",
+      "kind": "advisory",
+      "category": "evidence",
+      "scope": {
+        "channels": [
+          "all"
+        ]
+      },
+      "source": "§6.3 Positioning we deliberately avoid",
+      "rule": "Position against the manual process, and against tools not tied to source data. Never compare on writing quality.",
+      "check": "Competitive comparisons turn on data grounding and traceability.",
+      "stages": [
+        "message_model",
+        "slide_spec"
+      ],
+      "targets": [
+        {
+          "kb": "NAR-19",
+          "effect": "tighten"
+        }
+      ]
+    },
+    {
+      "id": "BRD-23",
+      "kind": "override",
+      "category": "visual",
+      "source": "§10.3 Typography",
+      "rule": "Headlines in Tiempos Headline, body and labels in Inter, data values in IBM Plex Mono. Never Tiempos for body text.",
+      "check": "Rendered text uses the role-correct typeface.",
+      "stages": [
+        "renderer",
+        "qa"
+      ],
+      "targets": [
+        {
+          "kb": "DSN-23",
+          "effect": "override",
+          "replacement": "Use the brand type system: serif (Tiempos Headline) for headlines only at 28pt or larger, sans-serif (Inter) for all body, label, and chart text, monospace (IBM Plex Mono) for data values. Three families total, each restricted to its role."
+        }
+      ],
+      "scope": {
+        "channels": [
+          "all"
+        ]
+      }
+    },
+    {
+      "id": "BRD-24",
+      "kind": "advisory",
+      "category": "visual",
+      "scope": {
+        "channels": [
+          "all"
+        ]
+      },
+      "source": "§10.3 Typography sizes (web px)",
+      "rule": "Brand sizes are specified for web (H1 40px, body 16px). For projected slides, the KB legibility floor governs and the brand ramp is scaled up.",
+      "check": "Live slides meet DSN-26 minimums. Read variant may use the brand ramp scaled to page size.",
+      "stages": [
+        "renderer"
+      ],
+      "targets": [
+        {
+          "kb": "DSN-26",
+          "effect": "kb_retained",
+          "note": "Brand web sizes would fall below the projection floor. KB wins. Promote to an override only if the brand owner specifies slide sizes."
+        }
+      ]
+    },
+    {
+      "id": "BRD-25",
+      "kind": "override",
+      "category": "visual",
+      "source": "§10.2 Color, §10.7 Data visualization",
+      "rule": "Chart color: Ink Navy for the proof series, Mist for context series, Ochre for one flagged point at most per chart, Signal Teal only for positive indicators. Ochre never carries text.",
+      "check": "At most one Ochre element per chart. No Ochre text.",
+      "stages": [
+        "renderer",
+        "qa"
+      ],
+      "targets": [
+        {
+          "kb": "DAT-18",
+          "effect": "override",
+          "replacement": "Render the series that proves the claim in Ink Navy, everything else in Mist, and mark at most one flagged point in Ochre."
+        },
+        {
+          "kb": "DSN-21",
+          "effect": "tighten",
+          "note": "Palette fixed to the brand set."
+        }
+      ],
+      "lint": {
+        "check": "chart_brand_color",
+        "params": {
+          "max_ochre": 1
+        }
+      },
+      "scope": {
+        "channels": [
+          "all"
+        ]
+      }
+    },
+    {
+      "id": "BRD-26",
+      "kind": "advisory",
+      "category": "visual",
+      "source": "§10.7 Chart type",
+      "rule": "Line for trends, bar for comparisons, never 3D or dual-axis, pies limited to three segments.",
+      "check": "Chart specs comply.",
+      "stages": [
+        "renderer",
+        "qa"
+      ],
+      "targets": [
+        {
+          "kb": "DAT-10",
+          "effect": "tighten",
+          "note": "KB allows up to eight slices when a pie is used. Brand allows three. DAT-09 still discourages pies whenever comparison matters."
+        },
+        {
+          "kb": "DAT-24",
+          "effect": "reinforce"
+        },
+        {
+          "kb": "DAT-11",
+          "effect": "reinforce"
+        }
+      ],
+      "lint": {
+        "check": "pie_slices",
+        "params": {
+          "max": 3
+        }
+      },
+      "scope": {
+        "channels": [
+          "all"
+        ]
+      }
+    },
+    {
+      "id": "BRD-27",
+      "kind": "constraint",
+      "category": "visual",
+      "source": "§10.5 Photography, §10.6 Iconography",
+      "rule": "Imagery shows real lab environments with practical light. Never the glowing DNA helix, blue-gloved-hands stock, double helix icon, or flask icon.",
+      "check": "No image or icon carries a banned subject tag.",
+      "stages": [
+        "slide_spec",
+        "renderer",
+        "qa"
+      ],
+      "targets": [
+        {
+          "kb": "EVD-27",
+          "effect": "tighten"
+        },
+        {
+          "kb": "DSN-38",
+          "effect": "tighten"
+        },
+        {
+          "kb": "DSN-60",
+          "effect": "tighten"
+        }
+      ],
+      "lint": {
+        "check": "banned_imagery",
+        "params": {
+          "tags": [
+            "dna_helix",
+            "double_helix",
+            "gloved_hands",
+            "flask",
+            "abstract_glow"
+          ]
+        }
+      },
+      "scope": {
+        "channels": [
+          "all"
+        ]
+      }
+    },
+    {
+      "id": "BRD-28",
+      "kind": "advisory",
+      "category": "visual",
+      "source": "§10.1 Logo",
+      "rule": "Logo clear space equals the cap height of the H. Minimum 24px digital. No rotation, shadow, or recolor.",
+      "check": "Logo placements respect clear space and size.",
+      "stages": [
+        "renderer"
+      ],
+      "targets": [
+        {
+          "kb": "DSN-52",
+          "effect": "reinforce"
+        }
+      ],
+      "scope": {
+        "channels": [
+          "all"
+        ]
+      }
+    },
+    {
+      "id": "BRD-29",
+      "kind": "advisory",
+      "category": "structure",
+      "scope": {
+        "channels": [
+          "investor",
+          "collateral"
+        ]
+      },
+      "source": "§9.4 Investor updates format",
+      "rule": "Executive summary order: headline finding, supporting data, what changed since the last conversation, what is still open.",
+      "check": "The executive summary includes a 'still open' line.",
+      "stages": [
+        "outline",
+        "slide_spec",
+        "qa"
+      ],
+      "targets": [
+        {
+          "kb": "NAR-38",
+          "effect": "tighten"
+        }
+      ],
+      "lint": {
+        "check": "exec_summary_open",
+        "params": {}
+      }
+    },
+    {
+      "id": "BRD-30",
+      "kind": "advisory",
+      "category": "structure",
+      "scope": {
+        "channels": [
+          "collateral"
+        ]
+      },
+      "source": "§9.4 Collateral row",
+      "rule": "One core proof point per page, data-forward, minimal decoration.",
+      "check": "No content slide carries more than one primary proof point.",
+      "stages": [
+        "slide_spec",
+        "editorial"
+      ],
+      "targets": [
+        {
+          "kb": "SPW-03",
+          "effect": "reinforce"
+        }
+      ]
+    },
+    {
+      "id": "BRD-31",
+      "kind": "advisory",
+      "category": "tone",
+      "scope": {
+        "channels": [
+          "investor",
+          "collateral"
+        ]
+      },
+      "source": "§9.4 CTA norms (investor: none), §2.3",
+      "rule": "State the ask plainly. No urgency devices ('limited', 'don't miss', 'act now') and no conversion CTA language.",
+      "check": "Closing slide states the ask without urgency phrasing.",
+      "stages": [
+        "slide_spec",
+        "qa"
+      ],
+      "targets": [
+        {
+          "kb": "NAR-18",
+          "effect": "tighten"
+        }
+      ],
+      "lint": {
+        "check": "banned_phrases",
+        "params": {
+          "list": "urgency"
+        }
+      }
+    },
+    {
+      "id": "BRD-32",
+      "kind": "constraint",
+      "category": "voice",
+      "source": "§8.3 Restraint as signal, §9.6",
+      "rule": "Never follow a figure with an intensifier or enthusiasm marker.",
+      "check": "No intensifier list term appears in any text.",
+      "stages": [
+        "slide_spec",
+        "notes",
+        "qa"
+      ],
+      "targets": [
+        {
+          "kb": "CLM-07",
+          "effect": "reinforce"
+        }
+      ],
+      "lint": {
+        "check": "banned_phrases",
+        "params": {
+          "list": "intensifiers"
+        }
+      },
+      "scope": {
+        "channels": [
+          "all"
+        ]
+      }
+    },
+    {
+      "id": "BRD-33",
+      "kind": "advisory",
+      "category": "mechanics",
+      "source": "§9.2 Numerals",
+      "rule": "Use numerals for any figure that is or could be a data point, including under ten.",
+      "check": "Spelled-out numbers attached to units or counts are flagged.",
+      "stages": [
+        "qa"
+      ],
+      "brand_doc_conflict": "§8.1 and §9.6 use 'three design partners' as on-brand examples, which contradicts this rule. Advisory until the brand owner resolves it.",
+      "lint": {
+        "check": "numerals",
+        "params": {}
+      },
+      "scope": {
+        "channels": [
+          "all"
+        ]
+      },
+      "targets": []
+    },
+    {
+      "id": "BRD-34",
+      "kind": "constraint",
+      "category": "visual",
+      "source": "§12 Accessibility",
+      "rule": "Charts never rely on color alone. Every image carries descriptive alt text.",
+      "check": "Images have alt text. Charts with more than one series use labels, not color only.",
+      "stages": [
+        "renderer",
+        "qa"
+      ],
+      "targets": [
+        {
+          "kb": "DSN-20",
+          "effect": "reinforce"
+        },
+        {
+          "kb": "DAT-15",
+          "effect": "tighten",
+          "note": "Direct labels or patterns so meaning never depends on color alone."
+        }
+      ],
+      "lint": {
+        "check": "alt_text",
+        "params": {}
+      },
+      "scope": {
+        "channels": [
+          "all"
+        ]
+      }
+    }
+  ]
+}

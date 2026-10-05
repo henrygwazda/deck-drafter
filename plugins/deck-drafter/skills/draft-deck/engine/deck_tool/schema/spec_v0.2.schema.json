@@ -1,0 +1,184 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "deck_tool/spec_v0.2",
+  "title": "Deck specification v0.2",
+  "type": "object",
+  "required": ["spec_version", "deck_id", "status", "profile", "thesis", "sections",
+               "sources", "evidence", "claims", "slides", "appendix"],
+  "properties": {
+    "spec_version": {"const": "0.2"},
+    "deck_id": {"type": "string"},
+    "status": {"type": "string"},
+    "profile": {"type": "string"},
+    "thesis": {"type": "string"},
+    "deck": {"type": "object"},
+
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id"],
+        "properties": {
+          "id": {"type": "string"},
+          "title": {"type": "string"},
+          "eyebrow": {"type": "string"},
+          "summary": {"type": "string"}
+        }
+      }
+    },
+
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^SRC\\d+$"},
+          "filename": {"type": "string"},
+          "doc_type": {"type": "string"},
+          "note": {"type": "string"},
+          "google": {
+            "type": "object",
+            "required": ["file_id"],
+            "properties": {
+              "file_id": {"type": "string"},
+              "title": {"type": "string"},
+              "mime_type": {"type": "string"},
+              "modified_time": {"type": "string"}
+            }
+          }
+        }
+      }
+    },
+
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "kind", "disposition", "provenance"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^EV\\d+$"},
+          "kind": {"enum": ["big_number", "chart", "diagram", "comparison", "table", "text"]},
+          "claim_type": {"type": ["string", "null"]},
+          "information_pattern": {"enum": ["comparison", "process_sequence", "temporal_trend", "distribution", "relationship", "scientific_mechanism", "quantitative_result", "evidence_matrix", "risk_register", "mixed_evidence", "contextual_explanation"]},
+          "disposition": {"enum": ["primary", "supporting", "background", "excluded", "unverified"]},
+          "value": {},
+          "label": {"type": "string"},
+          "text_live": {"type": "string"},
+          "text_read": {"type": "string"},
+          "chart": {"type": "object"},
+          "diagram": {"type": "object"},
+          "comparison": {"type": "object"},
+          "table": {"type": "object"},
+          "derived_from": {"type": "array", "items": {"type": "string", "pattern": "^EV\\d+$"}},
+          "customer_result": {"type": "boolean"},
+          "partner_named": {"type": "boolean"},
+          "partner_approved": {"type": "boolean"},
+          "stage": {"type": "string"},
+          "provenance": {
+            "type": "object",
+            "required": ["verification"],
+            "properties": {
+              "source_id": {"type": "string", "pattern": "^SRC\\d+$"},
+              "locator": {"type": "string"},
+              "original_value": {},
+              "unit": {"type": "string"},
+              "transform": {"type": "string"},
+              "verification": {"enum": ["source-supported", "derived", "interpreted", "disputed", "unverified"]}
+            }
+          }
+        }
+      }
+    },
+
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "statement", "evidence"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^CL\\d+$"},
+          "statement": {"type": "string"},
+          "evidence": {"type": "array", "items": {"type": "string", "pattern": "^EV\\d+$"}},
+          "argument_ref": {"type": "string", "pattern": "^ARG\\d+$"}
+        }
+      }
+    },
+
+    "slides": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "layout"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^SL\\d+$"},
+          "layout": {"type": "string"},
+          "section": {"type": ["string", "null"]},
+          "claim": {"type": "string", "pattern": "^CL\\d+$"},
+          "headline": {"type": "string"},
+          "subhead": {"type": "string"},
+          "body": {
+            "type": "object",
+            "required": ["live", "read"],
+            "properties": {
+              "live": {"type": "array", "items": {"type": "string"}},
+              "read": {"type": "string"}
+            }
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["ref"],
+              "properties": {
+                "ref": {"type": "string", "pattern": "^EV\\d+$"},
+                "role": {"enum": ["primary", "supporting"]},
+                "placement": {"enum": ["slide", "notes", "appendix"]},
+                "decided_by": {"type": "array", "items": {"type": "string"}}
+              }
+            }
+          },
+          "risks": {"type": "array"},
+          "objections": {"type": "array"},
+          "image": {"type": "object"},
+          "logo": {"type": "boolean"},
+          "notes": {"type": "string"}
+        }
+      }
+    },
+
+    "appendix": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "title"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^A\\d+$"},
+          "kind": {"enum": ["table", "evidence", "risk"]},
+          "parent_claim": {"type": "string", "pattern": "^SL\\d+$"},
+          "title": {"type": "string"},
+          "text": {"type": "string"},
+          "table": {"type": "object"},
+          "evidence_ref": {"type": "string", "pattern": "^EV\\d+$"},
+          "evidence_refs": {"type": "array", "items": {"type": "string", "pattern": "^EV\\d+$"}},
+          "source_ref": {"type": "string"},
+          "decision": {"type": "string"}
+        }
+      }
+    },
+
+    "flags": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type", "evidence"],
+        "properties": {
+          "id": {"type": "string"},
+          "type": {"enum": ["orphaned_evidence", "conflicting_sources", "unresolved_contradiction"]},
+          "evidence": {"type": "array", "items": {"type": "string", "pattern": "^EV\\d+$"}},
+          "note": {"type": "string"}
+        }
+      }
+    }
+  }
+}

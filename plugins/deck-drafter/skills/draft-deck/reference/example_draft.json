@@ -1,0 +1,261 @@
+{
+  "deck_id": "pilot-month3",
+  "brief": {
+    "audience": "Meridian Diagnostics lab director and lab operations lead",
+    "decision_maker": "The lab director, who decides whether HelixPrep expands beyond one line",
+    "purpose": "Agree the month 3 test that would let Meridian decide on expansion",
+    "ask": "Approve a 200+ sample batch test of HelixPrep in month 3",
+    "deck_type": "update",
+    "channels": [
+      "customer"
+    ],
+    "delivery": "read",
+    "expertise": "mixed",
+    "disposition": "evaluating",
+    "assumptions": [
+      "The deck is sent ahead and read, not presented; the update is addressed to the lab director, who has not used the unit"
+    ]
+  },
+  "story": {
+    "problem": "Meridian wants to run full-volume weeks on HelixPrep, but every batch so far has been under 150 samples, so nobody can say how it behaves at 200 or more.",
+    "why_care": "The lab director decides on expansion and will not recommend it past one line without seeing a full-size batch.",
+    "solution": "Run a 200+ sample batch test in month 3 and judge expansion on that result.",
+    "why_best": "It answers the one condition Meridian has named. Expanding without it would rest on small-batch results. Waiting leaves the decision where it is.",
+    "thesis": "Approve a 200+ sample batch test in month 3, because turnaround and errors have improved at the volumes tested, and the test answers the one condition Meridian has set for expansion."
+  },
+  "evidence": [
+    {
+      "id": "EV01",
+      "source": "SRC03",
+      "locator": "rows 1-8",
+      "kind": "table",
+      "unit": "samples, minutes, error count",
+      "text_live": "Weekly pilot metrics",
+      "text_read": "Samples processed, average turnaround, and errors for weeks 1 to 8."
+    },
+    {
+      "id": "EV02",
+      "source": "SRC03",
+      "locator": "row 1-row 8",
+      "quote": "week=1, samples_processed=40, avg_turnaround_minutes=210, errors=3",
+      "kind": "chart",
+      "pattern": "temporal_trend",
+      "text_live": "Turnaround 210 to 65 minutes",
+      "text_read": "Average turnaround fell from 210 minutes in week 1 to 65 minutes in week 8.",
+      "chart": {
+        "type": "line",
+        "title": "Average turnaround per batch",
+        "unit": "minutes",
+        "categories": [
+          "Week 1",
+          "Week 2",
+          "Week 3",
+          "Week 4",
+          "Week 5",
+          "Week 6",
+          "Week 7",
+          "Week 8"
+        ],
+        "series": [
+          {
+            "name": "Minutes",
+            "values": [
+              210,
+              190,
+              150,
+              120,
+              95,
+              80,
+              70,
+              65
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "EV03",
+      "source": "SRC03",
+      "locator": "row 5",
+      "quote": "week=5, samples_processed=74, avg_turnaround_minutes=95, errors=0",
+      "kind": "text",
+      "text_live": "Zero errors from week 5",
+      "text_read": "Errors fell to zero from week 5 onward."
+    },
+    {
+      "id": "EV04",
+      "source": "SRC02",
+      "locator": "L8-L9",
+      "quote": "fell from 3.5 hours (manual process, week 0 baseline) to 48 minutes by week 8",
+      "kind": "text",
+      "text_live": "Update: 48 minutes by week 8",
+      "text_read": "The month 2 update reports turnaround of 48 minutes by week 8, against a 3.5 hour manual baseline."
+    },
+    {
+      "id": "EV05",
+      "source": "SRC01",
+      "locator": "body L6-L9",
+      "quote": "we need to see how HelixPrep handles a 200+ sample batch before we can recommend expanding it past this one line",
+      "kind": "text",
+      "text_live": "Meridian needs a 200+ sample batch",
+      "text_read": "Meridian will not recommend expanding past one line until it sees HelixPrep handle a 200+ sample batch."
+    },
+    {
+      "id": "EV06",
+      "source": "SRC02",
+      "locator": "L15-L16",
+      "quote": "we have not yet tested above 150 samples",
+      "kind": "text",
+      "text_live": "Nothing tested above 150 samples",
+      "text_read": "HelixPrep has not been tested above 150 samples."
+    },
+    {
+      "id": "EV07",
+      "source": "SRC01",
+      "locator": "body L3",
+      "quote": "both our techs like the new workflow",
+      "kind": "text",
+      "text_live": "Both technicians like the workflow",
+      "text_read": "Meridian reports that both technicians like the new workflow."
+    },
+    {
+      "id": "EV08",
+      "source": "SRC01",
+      "locator": "body L3-L4",
+      "quote": "from our side the pilot is on track for month 3",
+      "kind": "text",
+      "text_live": "Meridian: on track for month 3",
+      "text_read": "Meridian's lab operations lead says the pilot is on track for month 3."
+    }
+  ],
+  "sections": [],
+  "title": {
+    "headline": "One full-size batch stands between you and expansion",
+    "subhead": "HelixPrep pilot at Meridian Diagnostics, month 3 proposal"
+  },
+  "exec_summary": {
+    "headline": "Approve a 200+ sample batch test of HelixPrep in month 3",
+    "points": [
+      "Turnaround down from 210 to 65 minutes",
+      "No errors since week 5",
+      "The test answers your condition for expansion"
+    ],
+    "open_note": "Week 8 turnaround is 65 minutes in the weekly log and 48 minutes in the month 2 update, and the two have not been reconciled.",
+    "read": "We are asking you to approve a 200+ sample batch test of HelixPrep in month 3. Three things support it. Average turnaround per batch fell from 210 minutes in week 1 to 65 minutes in week 8. Errors fell to zero from week 5 and stayed there. And the test answers the one condition your team has set before recommending expansion past one line. All of the results so far come from batches under 150 samples, which is why the test matters. One figure is still open: the month 2 update reports 48 minutes for week 8, while the weekly log shows 65 minutes. We use the log on these pages and will reconcile the two before the month 3 review."
+  },
+  "slides": [
+    {
+      "job": "proof",
+      "headline": "Your batches are coming through faster each week",
+      "subhead": "Average turnaround fell from 210 minutes in week 1 to 65 minutes in week 8, at under 150 samples per batch.",
+      "claim": "Turnaround has fallen steadily at the volumes tested.",
+      "evidence": [
+        "EV02",
+        "EV01",
+        "EV04"
+      ],
+      "show": "EV02",
+      "points": [
+        "Measured at under 150 samples",
+        "Update reports a different week 8 figure"
+      ],
+      "read": "Turnaround is the measure your team feels first, and it has fallen every week of the pilot. The weekly log shows average turnaround per batch dropping from 210 minutes in week 1 to 65 minutes in week 8. Every one of those batches was under 150 samples, so the trend tells you how HelixPrep behaves at today's volumes and no more. The month 2 update gives 48 minutes for week 8, which does not match the log, and we have not yet reconciled the two. The log is the measured record, so this slide uses it. What the trend cannot show is the full-volume week, which is the question the test answers."
+    },
+    {
+      "job": "proof",
+      "headline": "Errors have stopped since the team settled in",
+      "subhead": "Errors per week fell from 3 in week 1 to 0 from week 5 onward.",
+      "claim": "Weekly errors fell to zero by week 5 and stayed there.",
+      "evidence": [
+        "EV03",
+        "EV01",
+        "EV07",
+        "EV06"
+      ],
+      "points": [
+        "Zero errors in weeks 5 to 8",
+        "Both technicians like the workflow",
+        "Still all under 150 samples"
+      ],
+      "read": "Speed matters only if quality holds, and so far it has. The weekly log shows errors falling from 3 in week 1 to 0 in week 5, and they stayed at zero through week 8. Meridian also reports that both technicians like the new workflow. That is their view rather than a measurement, and we show it as such. Like the turnaround trend, this is evidence at batch sizes under 150 samples. It tells you the process is stable at today's volume, which is the right starting point for testing a larger one. It does not tell you how the unit behaves when a full-volume week arrives, so the next step is to test exactly that."
+    },
+    {
+      "job": "plan",
+      "headline": "A 200+ sample test answers your one condition",
+      "subhead": "Meridian has asked to see a 200+ sample batch before expanding, and nothing above 150 samples has been tested yet.",
+      "claim": "The only condition Meridian has set for expansion is a 200+ sample batch, which has not been tested.",
+      "evidence": [
+        "EV05",
+        "EV06",
+        "EV08"
+      ],
+      "points": [
+        "Your stated condition for expansion",
+        "Untested above 150 samples",
+        "[Test date and owner to agree]"
+      ],
+      "read": "Your team has been clear about what it needs before recommending expansion: to see HelixPrep handle a batch of 200 or more samples. Nothing above 150 samples has been tested, so the results so far cannot answer that question either way. Meridian says the pilot is on track for month 3, which makes month 3 the natural point to run a single full-size batch. We propose agreeing the date and who runs it at the month 3 review, then judging expansion on that result. If turnaround or errors rise at full volume, you will know before committing a second line, not after."
+    }
+  ],
+  "risks": {
+    "headline": "What could still go wrong, and what we would do",
+    "items": [
+      {
+        "text": "Turnaround may rise at 200+ samples",
+        "response": "The test measures it directly before any expansion.",
+        "evidence": [
+          "EV06"
+        ]
+      },
+      {
+        "text": "The week 8 figures disagree",
+        "response": "We will reconcile the log and the update before month 3.",
+        "evidence": [
+          "EV02",
+          "EV04"
+        ]
+      }
+    ]
+  },
+  "closing": {
+    "headline": "Approve the full-size batch test so expansion rests on evidence",
+    "ask": "Approve a 200+ sample batch test in month 3."
+  },
+  "conflicts": [
+    {
+      "evidence": [
+        "EV02",
+        "EV04"
+      ],
+      "note": "Week 8 turnaround is 65 minutes in the weekly log and 48 minutes in the month 2 update.",
+      "handling": "The weekly log is used on slides. The update's figure is named in the read text and the summary's open note."
+    }
+  ],
+  "judgment": [
+    {
+      "type": "reframe",
+      "target": "deck",
+      "decision": "Built the update around the one decision Meridian named rather than a status report",
+      "why": "Meridian's email names a single condition for expansion",
+      "rules": [
+        "PER-29"
+      ]
+    },
+    {
+      "type": "placeholder",
+      "target": "test plan",
+      "decision": "Test date and owner are a bracketed placeholder",
+      "why": "No source names them"
+    },
+    {
+      "type": "emphasis",
+      "target": "EV07",
+      "decision": "Technician satisfaction shown as Meridian's reported view, not a measurement",
+      "why": "It comes from an email, not a survey or measure",
+      "rules": [
+        "CLM-06"
+      ],
+      "review": false
+    }
+  ]
+}
